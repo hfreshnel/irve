@@ -83,11 +83,18 @@ public class Irve {
 	public void setPuissanceNominale(String puissanceNominale) {
 		this.puissanceNominale = puissanceNominale;
 	}
-	public ArrayList<String> getTypesdePrise() {
+	
+	/**
+	 * @return the typesDePrise
+	 */
+	public ArrayList<String> getTypesDePrise() {
 		return typesDePrise;
 	}
-	public void setTypesdePrise(ArrayList<String> typesdePrise) {
-		typesdePrise = typesdePrise;
+	/**
+	 * @param typesDePrise the typesDePrise to set
+	 */
+	public void setTypesDePrise(ArrayList<String> typesDePrise) {
+		this.typesDePrise = typesDePrise;
 	}
 	public String getHoraire() {
 		return horaire;
