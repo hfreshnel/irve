@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Irve {
 	
-	private int id;
 	private String nom;
 	private String nomEnseigne;
 	private String implantation;
@@ -13,32 +12,52 @@ public class Irve {
 	private ArrayList<String> typesDePrise = new ArrayList<String>();
 	private String horaire;
 	private boolean deuxRoues;
+	private Operateur operateur;
+	private Amenageur amenageur;
 	
-	public Irve(int id, String nom, String nomEnseigne, String implantation, String adresse, String puissanceNominale,
-			ArrayList<String> typesdePrise, String horaire, boolean deuxRoues) {
-		
-		this.id = id;
+	public Irve(String nom, String nomEnseigne, String implantation, String adresse, String puissanceNominale,
+			ArrayList<String> typesDePrise, String horaire, boolean deuxRoues, Operateur operateur,
+			Amenageur amenageur) {
 		this.nom = nom;
 		this.nomEnseigne = nomEnseigne;
 		this.implantation = implantation;
 		this.adresse = adresse;
 		this.puissanceNominale = puissanceNominale;
-		this.typesDePrise = typesdePrise;
+		this.typesDePrise = typesDePrise;
 		this.horaire = horaire;
 		this.deuxRoues = deuxRoues;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
+		this.operateur = operateur;
+		this.amenageur = amenageur;
 	}
 	public String getNom() {
 		return nom;
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	/**
+	 * @return the operateur
+	 */
+	public Operateur getOperateur() {
+		return operateur;
+	}
+	/**
+	 * @param operateur the operateur to set
+	 */
+	public void setOperateur(Operateur operateur) {
+		this.operateur = operateur;
+	}
+	/**
+	 * @return the amenageur
+	 */
+	public Amenageur getAmenageur() {
+		return amenageur;
+	}
+	/**
+	 * @param amenageur the amenageur to set
+	 */
+	public void setAmenageur(Amenageur amenageur) {
+		this.amenageur = amenageur;
 	}
 	public String getNomEnseigne() {
 		return nomEnseigne;
