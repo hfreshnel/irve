@@ -10,7 +10,7 @@ public class Irve {
 	private String implantation;
 	private String adresse;
 	private String puissanceNominale;
-	private ArrayList<String> TypesdePrise = new ArrayList<String>();
+	private ArrayList<String> typesDePrise = new ArrayList<String>();
 	private String horaire;
 	private boolean deuxRoues;
 	
@@ -23,7 +23,7 @@ public class Irve {
 		this.implantation = implantation;
 		this.adresse = adresse;
 		this.puissanceNominale = puissanceNominale;
-		TypesdePrise = typesdePrise;
+		this.typesDePrise = typesdePrise;
 		this.horaire = horaire;
 		this.deuxRoues = deuxRoues;
 	}
@@ -65,10 +65,10 @@ public class Irve {
 		this.puissanceNominale = puissanceNominale;
 	}
 	public ArrayList<String> getTypesdePrise() {
-		return TypesdePrise;
+		return typesDePrise;
 	}
 	public void setTypesdePrise(ArrayList<String> typesdePrise) {
-		TypesdePrise = typesdePrise;
+		typesdePrise = typesdePrise;
 	}
 	public String getHoraire() {
 		return horaire;
