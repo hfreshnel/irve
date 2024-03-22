@@ -5,7 +5,7 @@ public class ConnectionDAO {
 	 * URL, LOGIN et PASS sont des constantes
 	 */
 
-	final static String URL   = "jdbc:mysql://localhost:3306/unemployment?serverTimezone=UTC";
+	final static String URL   = "jdbc:mysql://localhost:3306/irve?characterEncoding=UTF-8";
 	final static String LOGIN = "root";
 	final static String PASS  = "password";
 	
