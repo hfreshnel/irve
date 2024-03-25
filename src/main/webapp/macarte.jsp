@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,6 +98,11 @@
 	</style>
 
        <script type="text/javascript">
+       <% 
+       ArrayList<Irve> listIrve = null;
+        if (request.getAttribute("listIrve") != null) 
+        	listIrve = (ArrayList<Irve>) request.getAttribute("listIrve");
+    	%>
         var map = L.map( 'map', {
             center: [36.7046887, 3.2317183],
             zoom: 9,
@@ -108,11 +115,19 @@
 
          // Just for testing, add some markers.
         var marks = [
-            { text: 'Building 135', latlng: [36.728217, 3.105652], },
-            { text: 'Building 233', latlng: [36.728217, 3.205652], },
             { text: 'Building 45', latlng: [36.728217, 3.305652], },
             { text: 'Building 15', latlng: [36.680448, 3.253714], },
         ];
+        <% int indexIrve = 0;%>
+        for(var i = 0; i < <%=listIrve.size()%>; i++){
+       	 <% Irve ir = listIrve.get(indexIrve);%>
+       	 marks.push({
+       		 text: '<%=ir.getNom() %>',
+       		 latlng: [<%=ir.getLatitude()%>, <%=ir.getLongitude()%>]
+       	 });
+       	 <% indexIrve++;%>
+        }
+         
 
         for(var i = 0; i<=marks.length; i++) {
             L.marker(marks[i].latlng)

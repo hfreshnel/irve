@@ -105,7 +105,7 @@ public class IrveDAO extends ConnectionDAO {
 		// connexion a la base de donnees
 		try {
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
-			ps = con.prepareStatement("SELECT * FROM unemployment ORDER BY id");
+			ps = con.prepareStatement("SELECT * FROM irve");
 
 			// on execute la requete
 			rs = ps.executeQuery();
@@ -170,11 +170,9 @@ public class IrveDAO extends ConnectionDAO {
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		int returnValue;
 		IrveDAO irveDAO = new IrveDAO();
-		Irve ir = irveDAO.get("Grupo Easycharger");
-		// appel implicite de la methode toString de la classe Object (a eviter)
-		System.out.println(ir);
+		ArrayList<Irve> irves = irveDAO.getList();
+		irves.forEach(irve -> System.out.println(irve));
 		
 		System.out.println();
 	}

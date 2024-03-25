@@ -2,6 +2,11 @@ package model;
 
 public class Operateur {
 	
+	@Override
+	public String toString() {
+		return "Operateur [nom=" + nom + ", contact=" + contact + ", telephone=" + telephone + "]";
+	}
+
 	private String nom;
 	private String contact;
 	private String telephone;

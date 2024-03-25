@@ -15,6 +15,11 @@ public class Amenageur {
 		return nom;
 	}
 
+	@Override
+	public String toString() {
+		return "Amenageur [nom=" + nom + ", siren=" + siren + ", contact=" + contact + "]";
+	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
