@@ -1,6 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Irve {
 	
@@ -152,7 +155,35 @@ public class Irve {
 		this.latitude = latitude;
 	}
 	
-	
-	
-
+	public JSONObject toJSON() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+			jsonObject.put("nom", this.nom);
+			jsonObject.put("nomEnseigne", this.nomEnseigne);
+	        jsonObject.put("implantation", this.implantation);
+	        jsonObject.put("adresse", this.adresse);
+	        jsonObject.put("puissanceNominale", this.puissanceNominale);
+	        // Convertir l'ArrayList typesDePrise en JSONArray
+	        JSONArray typesDePriseArray = new JSONArray(this.typesDePrise);
+	        jsonObject.put("typesDePrise", typesDePriseArray);
+	        jsonObject.put("horaire", this.horaire);
+	        jsonObject.put("longitude", this.longitude);
+	        jsonObject.put("latitude", this.latitude);
+	        jsonObject.put("tarification", this.tarification);
+	        jsonObject.put("deuxRoues", this.deuxRoues);
+	        // Convertir l'objet operateur en JSONObject
+	        if (this.operateur != null) {
+	            jsonObject.put("operateur", this.operateur.toJSON());
+	        }
+	        // Convertir l'objet amenageur en JSONObject
+	        if (this.amenageur != null) {
+	            jsonObject.put("amenageur", this.amenageur.toJSON());
+	        }
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return jsonObject;
+    }
 }

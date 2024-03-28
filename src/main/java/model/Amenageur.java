@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Amenageur {
 	private String nom;
 	private String siren;
@@ -40,6 +43,17 @@ public class Amenageur {
 		this.contact = contact;
 	}
 	
-	
+	public JSONObject toJSON() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+        	jsonObject.put("nom", this.nom);
+            jsonObject.put("siren", this.siren);
+			jsonObject.put("contact", this.contact);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return jsonObject;
+    }
 
 }

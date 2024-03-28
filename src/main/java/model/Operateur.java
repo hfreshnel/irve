@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Operateur {
 	
 	@Override
@@ -41,7 +45,18 @@ public class Operateur {
 		this.telephone = telephone;
 	}
 	
-	
+	public JSONObject toJSON() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+        	jsonObject.put("nom", this.nom);
+            jsonObject.put("contact", this.contact);
+			jsonObject.put("telephone", this.telephone);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return jsonObject;
+    }
 	
 	
 
