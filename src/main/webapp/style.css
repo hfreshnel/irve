@@ -22,6 +22,7 @@ body{
 	font-size: 25px;
 }
 #infostation{
+	visibility: hidden;
    	z-index: 10000000;
    	background-color: white;
    	width: 400px;
