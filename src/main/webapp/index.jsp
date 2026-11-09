@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Connexion</h1>
-		<form  method="POST" action="ma-carte">
+		<form  method="POST" action="macarte.jsp">
 		    <div class="container">
 		    <div class="row my-3">
 		        <div class="d-grid gap-2 d-md-block"><button class="btn btn-outline-primary" type="submit">Accéder à la carte</button></div>  

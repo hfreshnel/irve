@@ -203,7 +203,7 @@ var searchButton = document.getElementById('searchButton');
 searchButton.addEventListener('click', function() {
     // Récupérer le contenu de la balise input
     var contenu = document.getElementById('searchBarre').value;
-    if(contenu.length > 4)
+    if(contenu.length > 2)
     	getIRVE(contenu);
     else
     	alert("Pas assez de caractère pour la recherche");
